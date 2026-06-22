@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排列五 · 资料索引与信息卡片</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f8f7f5;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+
+        /* —— 深色头图 —— */
+        .hero {
+            background: #13161a;
+            color: #e6e3dd;
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero h1 span {
+            font-weight: 500;
+            color: #d9b382;
+        }
+
+        .hero .sub {
+            max-width: 640px;
+            margin: 0 auto;
+            font-size: 1rem;
+            color: #b9b4ab;
+            line-height: 1.7;
+        }
+
+        /* —— 浅色正文区 · 卡片网格 —— */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .intro-text {
+            margin-bottom: 2.8rem;
+            font-size: 1.05rem;
+            color: #2a2a2a;
+            border-left: 4px solid #b8926c;
+            padding-left: 1.2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #1f2329;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.01em;
+        }
+
+        .card p {
+            color: #3d3d3d;
+            font-size: 0.97rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #edeae4;
+            color: #3d362f;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            margin-top: 0.2rem;
+        }
+
+        /* —— 强调色用于链接 —— */
+        a {
+            color: #a77147;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #7f5839;
+            border-bottom-color: #a77147;
+        }
+
+        /* —— 自然链接段落 —— */
+        .link-passage {
+            margin-top: 3rem;
+            padding: 2rem 0;
+            border-top: 1px solid #ddd9d1;
+        }
+
+        .link-passage p {
+            font-size: 1rem;
+            max-width: 720px;
+            color: #2b2b2b;
+        }
+
+        .link-passage .highlight {
+            background: #f2ede6;
+            padding: 0.05rem 0.3rem;
+            border-radius: 4px;
+        }
+
+        /* —— 小 FAQ 摘要 —— */
+        .faq-mini {
+            margin-top: 3rem;
+            background: #f2efe9;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+        }
+
+        .faq-mini h4 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.7rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 450;
+            cursor: pointer;
+            color: #363636;
+            padding: 0.3rem 0;
+        }
+
+        .faq-mini details p {
+            margin-top: 0.4rem;
+            color: #4a4a4a;
+            padding-left: 0.5rem;
+            border-left: 2px solid #cbb8a3;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: #7a7a7a;
+            text-align: center;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd9d1;
+            margin: 1.2rem 0;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 1.8rem 1.2rem 3rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .faq-mini {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <section class="hero">
+        <h1><span>排列五</span> · 资料整理与信息索引</h1>
+        <div class="sub">
+            从静态记录到动态查阅，围绕数字序列的内容聚合。这里不是预测，只做清晰的归档和梳理。
+        </div>
+    </section>
+
+    <!-- 正文区：引出 + 卡片 -->
+    <main class="container">
+        <div class="intro-text">
+            整理信息，意在减少噪音。对于关注数字序列与排列逻辑的人而言，一份结构化的索引比碎片消息更有价值。下面是从三个角度展开的实用卡片。
+        </div>
+
+        <div class="card-grid">
+            <!-- 卡片 1：主视觉 / 内容结构 -->
+            <div class="card">
+                <h3>📋 内容主结构</h3>
+                <p>历史数据、开奖序列、基本走势……以列表与简单表格呈现，不带修饰。每一期记录保留号码、期号与日期，便于回溯。</p>
+                <p>数据颗粒度：日更，保留近 200 期基础信息。适合需要横向对比的读者。</p>
+                <span class="tag">结构化 · 可查阅</span>
+            </div>
+
+            <!-- 卡片 2：用途场景 -->
+            <div class="card">
+                <h3>🔍 常见用途场景</h3>
+                <p>个人做号码频次统计、冷热号初步观察、区间分布记录。也常被用于教学演示——理解排列组合的直观案例。</p>
+                <p>不构成任何投资建议，仅作为信息整理工具存在。</p>
+                <span class="tag">参考 · 信息整理</span>
+            </div>
+
+            <!-- 卡片 3：适合人群 -->
+            <div class="card">
+                <h3>👤 适合哪类人</h3>
+                <p>习惯自己做笔记的爱好者、需要基础数据源的分析者、以及单纯对数字排列规律感到好奇的读者。</p>
+                <p>强调：内容偏向资料库，不适合寻求“速成技巧”的人。</p>
+                <span class="tag">理性 · 资料型</span>
+            </div>
+
+            <!-- 卡片 4：附加——信息习惯 -->
+            <div class="card">
+                <h3>📌 信息使用习惯</h3>
+                <p>建议搭配自己的记录表。很多人会把数据下载后重新排序、标记、剔除重复，形成个性化视图。</p>
+                <p>网站本身不收集用户数据，所有信息均基于公开内容整理。</p>
+                <span class="tag">离线辅助 · 自由加工</span>
+            </div>
+        </div>
+
+        <!-- 自然链接段落：将排列五链接嵌入句中 -->
+        <div class="link-passage">
+            <p>
+                如果你希望查阅更完整的序列记录与历史参考，可以访问 
+                <a href="https://official-plw.com">排列五</a> 
+                的归档页面。那里保持着一份持续更新的基础资料表，包含期号、号码与部分附加说明。
+                页面结构简单，没有多余广告或弹窗，适合静下心来慢慢翻看。
+            </p>
+            <p style="margin-top: 1rem;">
+                另外，许多人在整理自己笔记时，会把网站上的公开数据作为对照底稿。
+                这种用法很常见——把 <span class="highlight">排列五</span> 当作一个安静的索引源，而不是信息轰炸器。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要（轻量，非完整问答库） -->
+        <div class="faq-mini">
+            <h4>❓ 常见疑问摘要</h4>
+            <details>
+                <summary>数据多久更新一次？</summary>
+                <p>通常每个开奖日后次日更新。遇法定节假日可能顺延，页面会有提示。</p>
+            </details>
+            <details>
+                <summary>是否提供走势图或高级分析？</summary>
+                <p>目前仅提供基础数字列表，不包含自动图表或指标计算。你可以自行复制数据到本地工具中加工。</p>
+            </details>
+            <details>
+                <summary>网站会收集我的浏览记录吗？</summary>
+                <p>不会。页面没有嵌入第三方统计脚本，也没有用户登录机制。纯粹的资料展示。</p>
+            </details>
+            <hr>
+            <p style="font-size: 0.9rem; color: #5a5a5a;">更多疑问可参照页面内的自然链接，或自行查阅相关说明。</p>
+        </div>
+
+        <div class="footer-note">
+            — 资料卡片页 · 仅用作信息索引 —
+        </div>
+    </main>
+</body>
+</html>
